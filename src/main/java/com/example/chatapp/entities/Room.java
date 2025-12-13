@@ -20,7 +20,7 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    private String room_id;
+    private String roomId;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Message> message = new ArrayList<>();
