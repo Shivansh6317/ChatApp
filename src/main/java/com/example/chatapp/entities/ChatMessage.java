@@ -1,5 +1,4 @@
 package com.example.chatapp.entities;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,23 +12,16 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Message {
+public class ChatMessage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
+    @Column(nullable = false)
+    private String roomId;
+
     private String sender;
     private String content;
-    private LocalDateTime timeStamp;
-
-    @ManyToOne
-    @JoinColumn(name = "room_id")
-    private Room room;
-
-    public Message(String sender, String content) {
-        this.sender = sender;
-        this.content = content;
-        this.timeStamp = LocalDateTime.now();
-    }
+    private LocalDateTime timestamp;
 }

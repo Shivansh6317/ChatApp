@@ -1,17 +1,15 @@
-package com.example.chatapp.playload;
+package com.example.chatapp.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class MessageRequest {
+public class ChatMessageDto {
     private String content;
     private String sender;
     private String roomId;
